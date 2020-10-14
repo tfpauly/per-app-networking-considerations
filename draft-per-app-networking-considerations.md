@@ -69,15 +69,15 @@ There are already mechanisms for applications to request and obtain particular t
 - APN6
 - Network tokens
 - Slicing in 3GPP 5G networks
-- Explicit application selection of a given PVD {{?RFC8801}}
+- Explicit application selection of a given Provisioning Domain (PvD) {{?RFC8801}}
 
-# Open Internet considerations
+# Open Internet implications
 
-In certain regulatory regimes, networks that provide general Internet access may not be permitted to discriminate between traffic sent to or from different lawful applications or websites, or such discrimination may be prohibited if commercially based. In a situation where the network operator has influence on the implementation of the user host (e.g., mobile networks where the handset is sold by the carrier), the device may be able to implement network policies directly, and thus may be impacted by neutrality considerations.
+In certain regulatory regions, networks that provide general Internet access may not be permitted to discriminate between traffic sent to or from different lawful applications or websites, or such discrimination may be prohibited if commercially based. In a situation where the network operator has influence on the implementation of the user host (e.g., mobile networks where the handset is sold by the carrier), the device may be able to implement network policies directly, and thus may be impacted by neutrality considerations.
 
 Neutrality concerns can be addressed by providing user control over assignment of particular applications to the particular network resources available to that user. Further, network neutrality implications may be reduced or avoided in some jurisdictions if the differential treatment occurs between different classes of traffic with different network requirements (e.g., bandwidth-intensive traffic vs. low-latency traffic) as opposed to between different applications with similar network requirements, and thus, by ensuring that the mechanism used to communicate requests to the network only specifies traffic classes and not individual applications.
 
-# Privacy considerations
+# Privacy implications
 
 IETF guidance to avoid pervasive monitoring {{?RFC7258}} is for network protocols to expose as little information as possible. Some of the proposed technologies for application signalling rely on the application exposing its identity to the network so that the network can then implement appropriate policies. This may provide the network with much more information than is needed to implement the desired behaviour. Information about which users are using specific applications, or visiting certain destinations, and when, can be highly privacy-sensitive.
 
@@ -89,20 +89,30 @@ In a situation where the network operator has influence over the implementation 
 
 # Mitigating implications via traffic categories
 
-Many of these implications can be mitigated If the mechanism to request a different class of service specifies general categories of traffic instead of particular application.
+Many of these implications can be mitigated if the mechanism to request different treatment of a service specifies a general category of traffic instead of a particular application.
 
-TODO: fill in
+Categories of traffic need to be sufficiently broad to not identify individual applications, and should be general enough that details about a user cannot be inferred merely by use of the category.
+
+Consider the example a network that wants to provide differentiated service for a role-playing game application that can take advantage of a low-latency path. Several levels of categories could be defined. The following list shows some examples, in order of decreasing specificity:
+
+1. Role-playing game
+2. Game
+3. Real-time/low-latency
+
+The first category would not be an appropriate choice due to the privacy implications of identifying what kind of game a user plays. The second category is preferable, but the third is best since it defines a way to treat the traffic without identifying anything about the content of the application.
+
+Some use cases for traffic differentiation might need other kinds of categories. For example, zero-rated applications could use categories based on payment tiers and rate-limiting.
 
 # User experience considerations
 
 Privacy and neutrality concerns can be mitigated if the host’s user is informed that particular applications are seeking or designated for particular treatment and consents to it. In order for consent to be meaningful, the user should be presented with a message that they understand. It may be difficult to balance the goal of providing complete and accurate information with the goal of ensuring that the user understands the implications.
 
-TODO: this text needs to be improved.
+[comment]: # (TODO: this text needs to be improved)
 
 # API considerations
 
-It is desirable to provide an API layer that is not tied to specific network technologies (e.g., URSP, VPN, etc.). PVDs could provide a useful layer of abstraction.
+It is desirable to provide an API layer that is not tied to specific network technologies (e.g., URSP, VPN, etc.). Having applications select a specific Provisioning Domain (PvD) could provide a useful layer of abstraction, as described in {{?I-D.ietf-taps-interface}}.
 
-TODO: add text
+[comment]: # (TODO: add text)
 
 Any API should not involve revealing an application or user identity to the network via metadata without network authentication. Instead, the API should allow a given setting to be conditional on the identity of the network. For example, an application should express “use the zero-rated service for my app when on a particular carrier network”, instead of blindly saying “this is my application identifier”.
