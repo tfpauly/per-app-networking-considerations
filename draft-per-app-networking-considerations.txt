@@ -72,15 +72,15 @@ Table of Contents
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
      1.1.  Conventions and Definitions . . . . . . . . . . . . . . .   3
    2.  Requesting differential treatment . . . . . . . . . . . . . .   3
-   3.  Open Internet considerations  . . . . . . . . . . . . . . . .   4
-   4.  Privacy considerations  . . . . . . . . . . . . . . . . . . .   4
+   3.  Open Internet implications  . . . . . . . . . . . . . . . . .   4
+   4.  Privacy implications  . . . . . . . . . . . . . . . . . . . .   4
    5.  Mitigating implications via traffic categories  . . . . . . .   5
-   6.  User experience considerations  . . . . . . . . . . . . . . .   5
-   7.  API considerations  . . . . . . . . . . . . . . . . . . . . .   5
+   6.  User experience considerations  . . . . . . . . . . . . . . .   6
+   7.  API considerations  . . . . . . . . . . . . . . . . . . . . .   6
    8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   6
      8.1.  Normative References  . . . . . . . . . . . . . . . . . .   6
      8.2.  Informative References  . . . . . . . . . . . . . . . . .   6
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   6
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   7
 
 1.  Introduction
 
@@ -174,11 +174,12 @@ Internet-Draft           Per App Considerations             October 2020
 
    *  Slicing in 3GPP 5G networks
 
-   *  Explicit application selection of a given PVD [RFC8801]
+   *  Explicit application selection of a given Provisioning Domain
+      (PvD) [RFC8801]
 
-3.  Open Internet considerations
+3.  Open Internet implications
 
-   In certain regulatory regimes, networks that provide general Internet
+   In certain regulatory regions, networks that provide general Internet
    access may not be permitted to discriminate between traffic sent to
    or from different lawful applications or websites, or such
    discrimination may be prohibited if commercially based.  In a
@@ -199,7 +200,7 @@ Internet-Draft           Per App Considerations             October 2020
    that the mechanism used to communicate requests to the network only
    specifies traffic classes and not individual applications.
 
-4.  Privacy considerations
+4.  Privacy implications
 
    IETF guidance to avoid pervasive monitoring [RFC7258] is for network
    protocols to expose as little information as possible.  Some of the
@@ -217,7 +218,6 @@ Internet-Draft           Per App Considerations             October 2020
    application X be sent on a different network path than all other
    traffic, the identity of application X would be exposed to the
    network as soon as it sends traffic.
-
 
 
 
@@ -241,11 +241,46 @@ Internet-Draft           Per App Considerations             October 2020
 
 5.  Mitigating implications via traffic categories
 
-   Many of these implications can be mitigated If the mechanism to
-   request a different class of service specifies general categories of
-   traffic instead of particular application.
+   Many of these implications can be mitigated if the mechanism to
+   request different treatment of a service specifies a general category
+   of traffic instead of a particular application.
 
-   TODO: fill in
+   Categories of traffic need to be sufficiently broad to not identify
+   individual applications, and should be general enough that details
+   about a user cannot be inferred merely by use of the category.
+
+   Consider the example a network that wants to provide differentiated
+   service for a role-playing game application that can take advantage
+   of a low-latency path.  Several levels of categories could be
+   defined.  The following list shows some examples, in order of
+   decreasing specificity:
+
+   1.  Role-playing game
+
+   2.  Game
+
+   3.  Real-time/low-latency
+
+   The first category would not be an appropriate choice due to the
+   privacy implications of identifying what kind of game a user plays.
+   The second category is preferable, but the third is best since it
+   defines a way to treat the traffic without identifying anything about
+   the content of the application.
+
+   Some use cases for traffic differentiation might need other kinds of
+   categories.  For example, zero-rated applications could use
+   categories based on payment tiers and rate-limiting.
+
+
+
+
+
+
+
+Colitti & Pauly           Expires 17 April 2021                 [Page 5]
+
+Internet-Draft           Per App Considerations             October 2020
+
 
 6.  User experience considerations
 
@@ -257,15 +292,12 @@ Internet-Draft           Per App Considerations             October 2020
    complete and accurate information with the goal of ensuring that the
    user understands the implications.
 
-   TODO: this text needs to be improved.
-
 7.  API considerations
 
    It is desirable to provide an API layer that is not tied to specific
-   network technologies (e.g., URSP, VPN, etc.).  PVDs could provide a
-   useful layer of abstraction.
-
-   TODO: add text
+   network technologies (e.g., URSP, VPN, etc.).  Having applications
+   select a specific Provisioning Domain (PvD) could provide a useful
+   layer of abstraction, as described in [I-D.ietf-taps-interface].
 
    Any API should not involve revealing an application or user identity
    to the network via metadata without network authentication.  Instead,
@@ -274,13 +306,6 @@ Internet-Draft           Per App Considerations             October 2020
    "use the zero-rated service for my app when on a particular carrier
    network", instead of blindly saying "this is my application
    identifier".
-
-
-
-Colitti & Pauly           Expires 17 April 2021                 [Page 5]
-
-Internet-Draft           Per App Considerations             October 2020
-
 
 8.  References
 
@@ -296,6 +321,22 @@ Internet-Draft           Per App Considerations             October 2020
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
 8.2.  Informative References
+
+   [I-D.ietf-taps-interface]
+              Trammell, B., Welzl, M., Enghardt, T., Fairhurst, G.,
+              Kuehlewind, M., Perkins, C., Tiesel, P., Wood, C., and T.
+              Pauly, "An Abstract Application Layer Interface to
+              Transport Services", Work in Progress, Internet-Draft,
+              draft-ietf-taps-interface-09, 27 July 2020,
+              <http://www.ietf.org/internet-drafts/draft-ietf-taps-
+              interface-09.txt>.
+
+
+
+Colitti & Pauly           Expires 17 April 2021                 [Page 6]
+
+Internet-Draft           Per App Considerations             October 2020
+
 
    [I-D.ietf-tls-esni]
               Rescorla, E., Oku, K., Sullivan, N., and C. Wood, "TLS
@@ -326,18 +367,6 @@ Authors' Addresses
    Email: lorenzo@google.com
 
 
-
-
-
-
-
-
-
-Colitti & Pauly           Expires 17 April 2021                 [Page 6]
-
-Internet-Draft           Per App Considerations             October 2020
-
-
    Tommy Pauly
    Apple Inc.
    One Apple Park Way
@@ -345,35 +374,6 @@ Internet-Draft           Per App Considerations             October 2020
    United States of America
 
    Email: tpauly@apple.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
