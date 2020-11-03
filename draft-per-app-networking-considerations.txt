@@ -5,8 +5,8 @@
 Network Working Group                                         L. Colitti
 Internet-Draft                                                    Google
 Intended status: Informational                                  T. Pauly
-Expires: 17 April 2021                                        Apple Inc.
-                                                         14 October 2020
+Expires: 7 May 2021                                           Apple Inc.
+                                                         3 November 2020
 
 
                Per-Application Networking Considerations
@@ -42,7 +42,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 17 April 2021.
+   This Internet-Draft will expire on 7 May 2021.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Colitti & Pauly           Expires 17 April 2021                 [Page 1]
+Colitti & Pauly            Expires 7 May 2021                   [Page 1]
 
-Internet-Draft           Per App Considerations             October 2020
+Internet-Draft           Per App Considerations            November 2020
 
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -80,6 +80,7 @@ Table of Contents
    8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   6
      8.1.  Normative References  . . . . . . . . . . . . . . . . . .   6
      8.2.  Informative References  . . . . . . . . . . . . . . . . .   6
+   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .   7
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   7
 
 1.  Introduction
@@ -108,10 +109,9 @@ Table of Contents
 
 
 
-
-Colitti & Pauly           Expires 17 April 2021                 [Page 2]
+Colitti & Pauly            Expires 7 May 2021                   [Page 2]
 
-Internet-Draft           Per App Considerations             October 2020
+Internet-Draft           Per App Considerations            November 2020
 
 
    *  Applications with specific performance requirements.  Certain
@@ -165,9 +165,9 @@ Internet-Draft           Per App Considerations             October 2020
 
 
 
-Colitti & Pauly           Expires 17 April 2021                 [Page 3]
+Colitti & Pauly            Expires 7 May 2021                   [Page 3]
 
-Internet-Draft           Per App Considerations             October 2020
+Internet-Draft           Per App Considerations            November 2020
 
 
    *  Network tokens
@@ -221,9 +221,9 @@ Internet-Draft           Per App Considerations             October 2020
 
 
 
-Colitti & Pauly           Expires 17 April 2021                 [Page 4]
+Colitti & Pauly            Expires 7 May 2021                   [Page 4]
 
-Internet-Draft           Per App Considerations             October 2020
+Internet-Draft           Per App Considerations            November 2020
 
 
    Privacy concerns may also be reduced or avoided if the mechanism to
@@ -277,9 +277,9 @@ Internet-Draft           Per App Considerations             October 2020
 
 
 
-Colitti & Pauly           Expires 17 April 2021                 [Page 5]
+Colitti & Pauly            Expires 7 May 2021                   [Page 5]
 
-Internet-Draft           Per App Considerations             October 2020
+Internet-Draft           Per App Considerations            November 2020
 
 
 6.  User experience considerations
@@ -327,22 +327,23 @@ Internet-Draft           Per App Considerations             October 2020
               Kuehlewind, M., Perkins, C., Tiesel, P., Wood, C., and T.
               Pauly, "An Abstract Application Layer Interface to
               Transport Services", Work in Progress, Internet-Draft,
-              draft-ietf-taps-interface-09, 27 July 2020,
+              draft-ietf-taps-interface-10, 2 November 2020,
               <http://www.ietf.org/internet-drafts/draft-ietf-taps-
-              interface-09.txt>.
+              interface-10.txt>.
 
 
 
-Colitti & Pauly           Expires 17 April 2021                 [Page 6]
+Colitti & Pauly            Expires 7 May 2021                   [Page 6]
 
-Internet-Draft           Per App Considerations             October 2020
+Internet-Draft           Per App Considerations            November 2020
 
 
    [I-D.ietf-tls-esni]
               Rescorla, E., Oku, K., Sullivan, N., and C. Wood, "TLS
               Encrypted Client Hello", Work in Progress, Internet-Draft,
-              draft-ietf-tls-esni-07, 1 June 2020, <http://www.ietf.org/
-              internet-drafts/draft-ietf-tls-esni-07.txt>.
+              draft-ietf-tls-esni-08, 16 October 2020,
+              <http://www.ietf.org/internet-drafts/draft-ietf-tls-esni-
+              08.txt>.
 
    [RFC7258]  Farrell, S. and H. Tschofenig, "Pervasive Monitoring Is an
               Attack", BCP 188, RFC 7258, DOI 10.17487/RFC7258, May
@@ -356,6 +357,11 @@ Internet-Draft           Per App Considerations             October 2020
               Shao, "Discovering Provisioning Domain Names and Data",
               RFC 8801, DOI 10.17487/RFC8801, July 2020,
               <https://www.rfc-editor.org/info/rfc8801>.
+
+Acknowledgments
+
+   Thanks to Adi Masputra and Elliot Briggs for their inputs to this
+   discussion.
 
 Authors' Addresses
 
@@ -383,10 +389,4 @@ Authors' Addresses
 
 
 
-
-
-
-
-
-
-Colitti & Pauly           Expires 17 April 2021                 [Page 7]
+Colitti & Pauly            Expires 7 May 2021                   [Page 7]
