@@ -116,3 +116,10 @@ It is desirable to provide an API layer that is not tied to specific network tec
 [comment]: # (TODO: add text)
 
 Any API should not involve revealing an application or user identity to the network via metadata without network authentication. Instead, the API should allow a given setting to be conditional on the identity of the network. For example, an application should express “use the zero-rated service for my app when on a particular carrier network”, instead of blindly saying “this is my application identifier”.
+
+--- back
+
+# Acknowledgments {#acknowledgments}
+{:numbered="false"}
+
+Thanks to Adi Masputra and Elliot Briggs for their inputs to this discussion.
