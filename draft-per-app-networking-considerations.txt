@@ -5,8 +5,8 @@
 Network Working Group                                         L. Colitti
 Internet-Draft                                                    Google
 Intended status: Informational                                  T. Pauly
-Expires: 7 May 2021                                           Apple Inc.
-                                                         3 November 2020
+Expires: 17 May 2021                                          Apple Inc.
+                                                        13 November 2020
 
 
                Per-Application Networking Considerations
@@ -42,7 +42,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 7 May 2021.
+   This Internet-Draft will expire on 17 May 2021.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Colitti & Pauly            Expires 7 May 2021                   [Page 1]
+Colitti & Pauly            Expires 17 May 2021                  [Page 1]
 
 Internet-Draft           Per App Considerations            November 2020
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Colitti & Pauly            Expires 7 May 2021                   [Page 2]
+Colitti & Pauly            Expires 17 May 2021                  [Page 2]
 
 Internet-Draft           Per App Considerations            November 2020
 
@@ -165,7 +165,7 @@ Internet-Draft           Per App Considerations            November 2020
 
 
 
-Colitti & Pauly            Expires 7 May 2021                   [Page 3]
+Colitti & Pauly            Expires 17 May 2021                  [Page 3]
 
 Internet-Draft           Per App Considerations            November 2020
 
@@ -221,7 +221,7 @@ Internet-Draft           Per App Considerations            November 2020
 
 
 
-Colitti & Pauly            Expires 7 May 2021                   [Page 4]
+Colitti & Pauly            Expires 17 May 2021                  [Page 4]
 
 Internet-Draft           Per App Considerations            November 2020
 
@@ -241,9 +241,11 @@ Internet-Draft           Per App Considerations            November 2020
 
 5.  Mitigating implications via traffic categories
 
-   Many of these implications can be mitigated if the mechanism to
-   request different treatment of a service specifies a general category
-   of traffic instead of a particular application.
+   Many of these implications can be mitigated if the mechanism does not
+   request different treatment of a service for a particular
+   application, but instead specifies a general category of traffic,
+   especially one that is defined based on traffic properties rather
+   than commercial agreements.
 
    Categories of traffic need to be sufficiently broad to not identify
    individual applications, and should be general enough that details
@@ -264,20 +266,18 @@ Internet-Draft           Per App Considerations            November 2020
    The first category would not be an appropriate choice due to the
    privacy implications of identifying what kind of game a user plays.
    The second category is preferable, but the third is best since it
-   defines a way to treat the traffic without identifying anything about
-   the content of the application.
+   defines a way to manage the network traffic without identifying
+   anything about the content of the application.
 
    Some use cases for traffic differentiation might need other kinds of
-   categories.  For example, zero-rated applications could use
-   categories based on payment tiers and rate-limiting.
+   categories.  For example, operators might wish to zero-rate
+   applications using categories based on payment tiers and rate-
+   limiting.
 
 
 
 
-
-
-
-Colitti & Pauly            Expires 7 May 2021                   [Page 5]
+Colitti & Pauly            Expires 17 May 2021                  [Page 5]
 
 Internet-Draft           Per App Considerations            November 2020
 
@@ -333,7 +333,7 @@ Internet-Draft           Per App Considerations            November 2020
 
 
 
-Colitti & Pauly            Expires 7 May 2021                   [Page 6]
+Colitti & Pauly            Expires 17 May 2021                  [Page 6]
 
 Internet-Draft           Per App Considerations            November 2020
 
@@ -389,4 +389,4 @@ Authors' Addresses
 
 
 
-Colitti & Pauly            Expires 7 May 2021                   [Page 7]
+Colitti & Pauly            Expires 17 May 2021                  [Page 7]
