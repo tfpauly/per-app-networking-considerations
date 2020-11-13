@@ -89,7 +89,7 @@ In a situation where the network operator has influence over the implementation 
 
 # Mitigating implications via traffic categories
 
-Many of these implications can be mitigated if the mechanism to request different treatment of a service specifies a general category of traffic instead of a particular application.
+Many of these implications can be mitigated if the mechanism does not request different treatment of a service for a particular application, but instead specifies a general category of traffic, especially one that is defined based on traffic properties rather than commercial agreements.
 
 Categories of traffic need to be sufficiently broad to not identify individual applications, and should be general enough that details about a user cannot be inferred merely by use of the category.
 
@@ -99,9 +99,9 @@ Consider the example a network that wants to provide differentiated service for 
 2. Game
 3. Real-time/low-latency
 
-The first category would not be an appropriate choice due to the privacy implications of identifying what kind of game a user plays. The second category is preferable, but the third is best since it defines a way to treat the traffic without identifying anything about the content of the application.
+The first category would not be an appropriate choice due to the privacy implications of identifying what kind of game a user plays. The second category is preferable, but the third is best since it defines a way to manage the network traffic without identifying anything about the content of the application.
 
-Some use cases for traffic differentiation might need other kinds of categories. For example, zero-rated applications could use categories based on payment tiers and rate-limiting.
+Some use cases for traffic differentiation might need other kinds of categories. For example, operators might wish to zero-rate applications using categories based on payment tiers and rate-limiting.
 
 # User experience considerations
 
