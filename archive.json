@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2020-11-12T00:26:21.209840+00:00",
+  "timestamp": "2020-11-15T00:28:37.698951+00:00",
   "repo": "tfpauly/per-app-networking-considerations",
   "labels": [
     {
@@ -50,5 +50,48 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "MDExOlB1bGxSZXF1ZXN0NTIwMzM2Nzc4",
+      "title": "Editorial changes",
+      "url": "https://github.com/tfpauly/per-app-networking-considerations/pull/1",
+      "state": "MERGED",
+      "author": "tfpauly",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2020-11-13T05:03:26Z",
+      "updatedAt": "2020-11-13T05:05:46Z",
+      "baseRepository": "tfpauly/per-app-networking-considerations",
+      "baseRefName": "master",
+      "baseRefOid": "7aef436f88f59a9a06c11f5e818ef0a86dc9b48d",
+      "headRepository": "tfpauly/per-app-networking-considerations",
+      "headRefName": "tfpauly-patch-1",
+      "headRefOid": "c6ef9c1bf0cfa9c30620d33d7fa5f20f49d4e310",
+      "closedAt": "2020-11-13T05:05:24Z",
+      "mergedAt": "2020-11-13T05:05:24Z",
+      "mergedBy": "tfpauly",
+      "mergeCommit": {
+        "oid": "58cf8412aaa376a378d2480c026a13b2660faf9b"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NTI5NzQwMzA1",
+          "commit": {
+            "abbreviatedOid": "c6ef9c1"
+          },
+          "author": "lcolitti",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2020-11-13T05:05:10Z",
+          "updatedAt": "2020-11-13T05:05:10Z",
+          "comments": []
+        }
+      ]
+    }
+  ]
 }
